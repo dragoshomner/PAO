@@ -22,10 +22,10 @@ public class ex1 {
 	public static void main(String[] args) {
 		HashMap<Character, Integer> lettersMap1 = new HashMap<Character, Integer>();
 		HashMap<Character, Integer> lettersMap2 = new HashMap<Character, Integer>();
-		StringBuilder word1, word2;
+		String word1, word2;
 		Scanner sc = new Scanner(System.in);
-		word1 = new StringBuilder(sc.nextLine());
-		word2 =  new StringBuilder(sc.nextLine());
+		word1 = sc.nextLine();
+		word2 = sc.nextLine();
 		
 		CharacterIterator it1 = new StringCharacterIterator(word1.toString());
 		while (it1.current() != CharacterIterator.DONE) {
