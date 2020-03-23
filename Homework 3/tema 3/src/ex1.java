@@ -36,7 +36,8 @@ public class ex1 {
 		
 		CharacterIterator it2 = new StringCharacterIterator(word2.toString());
 		while (it2.current() != CharacterIterator.DONE) {
-			lettersMap2.merge(it2.current(), 1, (k, v) -> v + 1);
+			Integer count = lettersMap2.containsKey(it2.current()) ? lettersMap2.get(it2.current()) : 0;
+			lettersMap2.put(it2.current(), count + 1);
 			it2.next();
 		}
 		
