@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Marketplace {
 	private static int nextId = 0;
 	private final int id;
-	private String code;
+	private final String code;
 	private String name;
 	private ArrayList<Customer> customers;
 	private ArrayList<Product> products;
@@ -52,10 +52,6 @@ public class Marketplace {
 
 	public String getCode() {
 		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public void addProduct(Product product) {

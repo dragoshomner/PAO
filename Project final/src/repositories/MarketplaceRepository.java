@@ -23,4 +23,11 @@ public class MarketplaceRepository {
     public void setListOfMarketplaces(ArrayList<Marketplace> listOfMarketplaces) {
         this.listOfMarketplaces = listOfMarketplaces;
     }
+
+    public Marketplace findByCode(String code) {
+        return listOfMarketplaces.stream()
+                .filter(marketplace -> marketplace.getCode().equals(code))
+                .findFirst()
+                .orElse(null);
+    }
 }

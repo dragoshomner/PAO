@@ -2,7 +2,9 @@ import models.Customer;
 import models.Marketplace;
 import models.Product;
 import repositories.MarketplaceRepository;
+import repositories.ProductRepository;
 import services.MarketplaceService;
+import services.ProductService;
 import utils.CSVReader;
 
 import java.util.List;
@@ -10,11 +12,18 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
+		// Repositories
 		MarketplaceRepository marketplaceRepository = new MarketplaceRepository();
+		ProductRepository productRepository = new ProductRepository();
+
+		// Services
 		MarketplaceService marketplaceService = new MarketplaceService(marketplaceRepository);
+		ProductService productService = new ProductService(productRepository, marketplaceRepository);
+
 		CSVReader reader = CSVReader.getInstance();
 
 		marketplaceService.addBulkString(reader.read("src/csv/marketplaces.csv"));
+		productService.addBulkString(reader.read("src/csv/products.csv"));
 		marketplaceService.displayAll();
 
 //		Marketplace emag = new Marketplace("emag");

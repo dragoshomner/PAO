@@ -4,10 +4,12 @@ public class Product {
 	private static int nextId = 0;
 	private final int id;
 	private String name;
+	private final String code;
 	private double price;
 	
-	public Product(String name, double price) {
+	public Product(String code, String name, double price) {
 		this.id = getNextId();
+		this.code = code;
 		this.name = name;
 		this.price = price;
 	}
@@ -36,7 +38,11 @@ public class Product {
 		return price;
 	}
 
-    @Override
+	public String getCode() {
+		return code;
+	}
+
+	@Override
     public boolean equals(Object o) { 
 
         if (o == this) { 

@@ -32,7 +32,11 @@ public class MarketplaceService {
 			marketplaceRepository.add(marketplace);
 		}
 	}
-	
+
+	public Marketplace findByCode(String code) {
+		return marketplaceRepository.findByCode(code);
+	}
+
 	public void displayAll() {
 		List<Marketplace> listOfMarketplaces = marketplaceRepository.getListOfMarketplaces();
 		if (listOfMarketplaces.isEmpty()) {
