@@ -3,14 +3,23 @@ package models;
 import java.util.ArrayList;
 
 public class Marketplace {
-	String name;
+	private static int nextId = 0;
+	private final int id;
+	private String code;
+	private String name;
 	private ArrayList<Customer> customers;
 	private ArrayList<Product> products;
 	
-	public Marketplace(String name) {
+	public Marketplace(String code, String name) {
+		this.id = getNextId();
 		this.name = name;
+		this.code = code;
 		customers = new ArrayList<Customer>();
 		products = new ArrayList<Product>();
+	}
+
+	private int getNextId() {
+		return ++nextId;
 	}
 	
 	public String getName() {
@@ -29,6 +38,10 @@ public class Marketplace {
 		return products;
 	}
 
+	public int getId() {
+		return id;
+	}
+
 	public void addCustomer(Customer customer) {
 		customers.add(customer);
 	}
@@ -36,7 +49,15 @@ public class Marketplace {
 	public int getNumberOfCustomers() {
 		return customers.size();
 	}
-	
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public void addProduct(Product product) {
 		for (Product p : products) {
 			if (p.equals(product)) {

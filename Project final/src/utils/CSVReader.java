@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CSVReader {
@@ -23,17 +24,16 @@ public class CSVReader {
         return instance;
     }
 
-    public List<Marketplace> readMarketplace(String filePath) {
+    public List<List<String>> read(String filePath) {
         BufferedReader br = null;
         String line = "";
-        List<Marketplace> marketplaces = new ArrayList<>();
+        List<List<String>> result = new ArrayList<>();
 
         try {
             br = new BufferedReader(new FileReader(filePath));
             while ((line = br.readLine()) != null) {
-                String[] input = line.split(DELIMITER);
-                Marketplace marketplace = new Marketplace(input[0]);
-                marketplaces.add(marketplace);
+                List<String> input = Arrays.asList(line.split("\\s*,\\s*"));
+                result.add(input);
             }
 
         } catch (IOException e) {
@@ -48,7 +48,7 @@ public class CSVReader {
             }
         }
 
-        return marketplaces;
+        return result;
     }
 
 }

@@ -14,8 +14,7 @@ public class Main {
 		MarketplaceService marketplaceService = new MarketplaceService(marketplaceRepository);
 		CSVReader reader = CSVReader.getInstance();
 
-		List<Marketplace> marketplaces = reader.readMarketplace("src/csv/marketplaces.csv");
-		marketplaceService.addBulk(marketplaces);
+		marketplaceService.addBulkString(reader.read("src/csv/marketplaces.csv"));
 		marketplaceService.displayAll();
 
 //		Marketplace emag = new Marketplace("emag");

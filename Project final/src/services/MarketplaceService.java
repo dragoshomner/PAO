@@ -25,6 +25,13 @@ public class MarketplaceService {
 			marketplaceRepository.add(marketplace);
 		}
 	}
+
+	public void addBulkString(List<List<String>> input) {
+		for (List<String> marketplaceString : input) {
+			Marketplace marketplace = new Marketplace(marketplaceString.get(0), marketplaceString.get(1));
+			marketplaceRepository.add(marketplace);
+		}
+	}
 	
 	public void displayAll() {
 		List<Marketplace> listOfMarketplaces = marketplaceRepository.getListOfMarketplaces();
