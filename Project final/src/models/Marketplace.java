@@ -69,10 +69,15 @@ public class Marketplace {
 		System.out.println("Nume: " + name);
 		if (products.size() < 1) {
 			System.out.println("Nu sunt produse");
-			return ;
 		}
 		for (Product p : products) {
 			System.out.println(p.toString());
+		}
+		if (customers.size() < 1) {
+			System.out.println("Nu sunt clienti");
+		}
+		for (Customer c : customers) {
+			System.out.println(c.toString());
 		}
 	}
 	

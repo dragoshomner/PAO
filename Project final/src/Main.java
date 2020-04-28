@@ -1,8 +1,10 @@
 import models.Customer;
 import models.Marketplace;
 import models.Product;
+import repositories.CustomerRepository;
 import repositories.MarketplaceRepository;
 import repositories.ProductRepository;
+import services.CustomerService;
 import services.MarketplaceService;
 import services.ProductService;
 import utils.CSVReader;
@@ -15,18 +17,28 @@ public class Main {
 		// Repositories
 		MarketplaceRepository marketplaceRepository = new MarketplaceRepository();
 		ProductRepository productRepository = new ProductRepository();
+		CustomerRepository customerRepository = new CustomerRepository();
 
 		// Services
 		MarketplaceService marketplaceService = new MarketplaceService(marketplaceRepository);
 		ProductService productService = new ProductService(productRepository, marketplaceRepository);
+		CustomerService customerService = new CustomerService(customerRepository, marketplaceRepository);
 
 		CSVReader reader = CSVReader.getInstance();
 
 		marketplaceService.addBulkString(reader.read("src/csv/marketplaces.csv"));
 		productService.addBulkString(reader.read("src/csv/products.csv"));
-		marketplaceService.displayAll();
+		customerService.addBulkString(reader.read("src/csv/customers.csv"));
+//		marketplaceService.displayAll();
 
-//		Marketplace emag = new Marketplace("emag");
+		Customer dragos = customerService.findByUsername("dragos");
+		dragos.addToCart(productService.findByCode("ROSII"), 5);
+		dragos.addToCart(productService.findByCode("CASTRAVETI"), 3);
+		dragos.toOrder();
+//		dragos.showOrders();
+
+		Marketplace emag = marketplaceService.findByCode("EMAG");
+		emag.showOrders();
 //		Marketplace altex = new Marketplace("altex");
 //		Marketplace olx = new Marketplace("olx");
 //		marketplaceService.addMatketplace(emag);

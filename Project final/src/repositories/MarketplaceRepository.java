@@ -1,5 +1,6 @@
 package repositories;
 
+import models.Customer;
 import models.Marketplace;
 
 import java.util.ArrayList;

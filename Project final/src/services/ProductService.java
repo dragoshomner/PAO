@@ -25,6 +25,12 @@ public class ProductService {
                     Double.parseDouble(productString.get(2)));
             Marketplace marketplace = marketplaceRepository.findByCode(productString.get(3));
             productRepository.addToMarketplace(product, marketplace);
+            productRepository.add(product);
         }
     }
+
+    public Product findByCode(String code) {
+        return productRepository.findByCode(code);
+    }
+
 }
