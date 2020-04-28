@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Customer {
 	private static int nextId = 0;
@@ -84,5 +85,10 @@ public class Customer {
 		return "Client: " +
 				"name '" + name +
 				"| username='" + username;
+	}
+
+	public String toCSV() {
+		return this.username + "," +
+				this.name + "\n";
 	}
 }

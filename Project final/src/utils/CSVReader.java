@@ -32,7 +32,7 @@ public class CSVReader {
         try {
             br = new BufferedReader(new FileReader(filePath));
             while ((line = br.readLine()) != null) {
-                List<String> input = Arrays.asList(line.split("\\s*,\\s*"));
+                List<String> input = Arrays.asList(line.split("\\s*" + DELIMITER + "\\s*"));
                 result.add(input);
             }
 

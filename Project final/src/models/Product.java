@@ -63,4 +63,10 @@ public class Product {
     	return "Produs: " + name + " | Price: " + price + " lei";
     }
 
+    public String toCSV() {
+		return code + "," +
+				name + "," +
+				price +  "\n";
+	}
+
 }

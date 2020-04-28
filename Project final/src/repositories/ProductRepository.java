@@ -28,4 +28,12 @@ public class ProductRepository {
                 .findFirst()
                 .orElse(null);
     }
+
+    public List<String> toCSV() {
+        List<String> output = new ArrayList<>();
+        for (Product product : products) {
+            output.add(product.toCSV());
+        }
+        return output;
+    }
 }

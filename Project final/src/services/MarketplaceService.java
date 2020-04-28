@@ -76,5 +76,9 @@ public class MarketplaceService {
 			}
 		}
 	}
+
+	public List<String> toCSV() {
+		return marketplaceRepository.toCSV();
+	}
 	
 }

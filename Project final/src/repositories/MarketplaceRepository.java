@@ -4,6 +4,7 @@ import models.Customer;
 import models.Marketplace;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MarketplaceRepository {
 
@@ -30,5 +31,13 @@ public class MarketplaceRepository {
                 .filter(marketplace -> marketplace.getCode().equals(code))
                 .findFirst()
                 .orElse(null);
+    }
+
+    public List<String> toCSV() {
+        List<String> output = new ArrayList<>();
+        for (Marketplace marketplace : listOfMarketplaces) {
+            output.add(marketplace.toCSV());
+        }
+        return output;
     }
 }

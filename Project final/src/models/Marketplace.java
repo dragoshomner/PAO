@@ -88,4 +88,9 @@ public class Marketplace {
 			customer.showOrders();
 		}
 	}
+
+	public String toCSV() {
+		return code + "," +
+				name + "\n";
+	}
 }

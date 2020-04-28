@@ -34,4 +34,8 @@ public class CustomerService {
     public List<Customer> getAll() {
         return customerRepository.getAll();
     }
+
+    public List<String> toCSV() {
+        return customerRepository.toCSV();
+    }
 }

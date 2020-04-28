@@ -1,20 +1,22 @@
 package models;
 
+import java.util.List;
+
 public class OrderStatus {
-	private final int MAX_NUMBER = 3;
-	private String[] status;
+	private static int MAX_NUMBER;
+	private static String[] status;
 	private int currentStatus;
 	
 	public OrderStatus() {
-		initializeStatus();
 		this.currentStatus = 0;
 	}
 	
-	private void initializeStatus() {
+	public static void initialize(List<List<String>> input) {
+		MAX_NUMBER = input.size();
 		status = new String[MAX_NUMBER];
-		status[0] = "Plasata";
-		status[1] = "Platita";
-		status[2] = "Trimisa";
+		for (int index = 0; index < MAX_NUMBER; index ++) {
+			status[index] = input.get(index).get(0);
+		}
 	}
 	
 	public void nextStatus() {

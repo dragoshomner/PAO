@@ -33,4 +33,8 @@ public class ProductService {
         return productRepository.findByCode(code);
     }
 
+    public List<String> toCSV() {
+        return productRepository.toCSV();
+    }
+
 }

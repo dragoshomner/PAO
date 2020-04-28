@@ -31,4 +31,12 @@ public class CustomerRepository {
     public List<Customer> getAll() {
         return this.customers;
     }
+
+    public List<String> toCSV() {
+        List<String> output = new ArrayList<>();
+        for (Customer customer : customers) {
+            output.add(customer.toCSV());
+        }
+        return output;
+    }
 }
