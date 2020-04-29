@@ -14,3 +14,11 @@ Proiectul simuleaza un magazin online, in care avem clienti si produse. Structur
 - Clasa OrderStatus, care contine un Array de statusuri, care este atasat fiecarei comenzi pentru a sti starea curenta (se pot adauga in functie de necesitate si alte statusuri)
 
 Pentru o logica desfasurare a comenzilor, se creeaza entitatile, fiecare client isi adauga produse in cos in functie de cantitate *addToCart()* si plaseaza comenzi *toOrder()*. Ordinea explicata mai devreme se poate regasi si in clasa Main.
+
+## Partea a doua
+
+In partea a doua am imbunatatit cateva dintre entitatile pe care le-am folosit, adaugandu-le clase de serviciu si repository. Astfel, putem pastra datele in repository, le modelam in service si le putem apela din metoda main. 
+
+Alt lucru pe care l-am adaugat a fost sa citim datele din fisiere csv pentru entitatile marketplace, customer, product si status. Acest lucru este posibil folosind clasa de tip singleton CSVReader, implementata in package-ul utils. De asemenea, avem si clasa singleton CSVWriter, care scrie in fisier datele.
+
+Am implementat si o functie de audit, care se numeste MyLogger, si scrie in fisierul log.csv ce functii si data la care au fost apelate. Daca fisierul de log.csv nu exista, atunci este creat, iar in acesta se scrie peste, astfel incat sa avel log-ul de pe mai multe rulari.
