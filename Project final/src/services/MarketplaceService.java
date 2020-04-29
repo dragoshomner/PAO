@@ -3,6 +3,7 @@ package services;
 import models.Customer;
 import models.Marketplace;
 import repositories.MarketplaceRepository;
+import utils.MyLogger;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -46,6 +47,8 @@ public class MarketplaceService {
 		for (Marketplace m : listOfMarketplaces) {
 			m.show();
 		}
+
+		MyLogger.write("displayAll");
 	}
 
 	public void displayAllSortedByName() {
@@ -55,6 +58,8 @@ public class MarketplaceService {
 		for (Marketplace m : sortedList) {
 			m.show();
 		}
+
+		MyLogger.write("displayAllSortedByName");
 	}
 
 	public void displayAllSortedByNumberOfCustomers() {
@@ -64,6 +69,8 @@ public class MarketplaceService {
 		for (Marketplace m : sortedList) {
 			m.show();
 		}
+
+		MyLogger.write("displayAllSortedByNumberOfCustomers");
 	}
 	
 	public void displayCustomersPerMarketplace() {
@@ -75,6 +82,8 @@ public class MarketplaceService {
 				System.out.println(customer.getName());
 			}
 		}
+
+		MyLogger.write("displayCustomersPerMarketplace");
 	}
 
 	public List<String> toCSV() {
