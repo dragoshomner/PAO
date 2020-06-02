@@ -22,3 +22,11 @@ In partea a doua am imbunatatit cateva dintre entitatile pe care le-am folosit, 
 Alt lucru pe care l-am adaugat a fost sa citim datele din fisiere csv pentru entitatile marketplace, customer, product si status. Acest lucru este posibil folosind clasa de tip singleton CSVReader, implementata in package-ul utils. De asemenea, avem si clasa singleton CSVWriter, care scrie in fisier datele.
 
 Am implementat si o functie de audit, care se numeste MyLogger, si scrie in fisierul log.csv ce functii si data la care au fost apelate. Daca fisierul de log.csv nu exista, atunci este creat, iar in acesta se scrie peste, astfel incat sa avel log-ul de pe mai multe rulari.
+
+## Partea a treia
+
+In partea a treia am adaugat o conexiune la o baza de date folosing JDBC. Entitatile pe care le-am introdus in baza de date sunt Marketplace, Customer, Product si OrderStatus, carora le-am creat clasele MarketplaceDAO, CustomerDAO, ProductDAO si OrderStatusDAO.
+
+Am creat si interfata grafica folosind Swing, in care utilizatorul poate apela prin apasarea unui buton fiecare dintre cele 5 metode din clasa de serviciu a marketplace-ului. La fiecare actiune, se va deschide o fereastra noua, care va arata rezultatele intr-un label si se va putea da back pentru a te intoarce la fereastra initiala. 
+
+Ultima modificare a fost sa adaug numele thread-ului care apeleaza fiecare functie in fisierul de log, implementata in clasa singleton MyLogger.
