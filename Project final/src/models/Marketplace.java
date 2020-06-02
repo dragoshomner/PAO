@@ -89,6 +89,14 @@ public class Marketplace {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "Marketplace{" +
+				"code='" + code + '\'' +
+				", name='" + name + '\'' +
+				'}';
+	}
+
 	public String toCSV() {
 		return code + "," +
 				name + "\n";

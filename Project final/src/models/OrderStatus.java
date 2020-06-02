@@ -6,9 +6,14 @@ public class OrderStatus {
 	private static int MAX_NUMBER;
 	private static String[] status;
 	private int currentStatus;
+	private String name;
 	
 	public OrderStatus() {
 		this.currentStatus = 0;
+	}
+
+	public OrderStatus(String name) {
+		this.name = name;
 	}
 	
 	public static void initialize(List<List<String>> input) {
@@ -27,5 +32,14 @@ public class OrderStatus {
 	
 	public String getStatus() {
 		return status[currentStatus];
+	}
+
+	public String getName() { return name; }
+
+	@Override
+	public String toString() {
+		return "OrderStatus{" +
+				"name='" + name + '\'' +
+				'}';
 	}
 }

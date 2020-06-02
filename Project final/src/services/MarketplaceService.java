@@ -38,52 +38,74 @@ public class MarketplaceService {
 		return marketplaceRepository.findByCode(code);
 	}
 
-	public void displayAll() {
+	public String displayAll() {
+		String result = "";
 		List<Marketplace> listOfMarketplaces = marketplaceRepository.getListOfMarketplaces();
 		if (listOfMarketplaces.isEmpty()) {
-			System.out.println("No marketplaces");
-			return ;
+			result = "No marketplaces";
+			return result;
 		}
 		for (Marketplace m : listOfMarketplaces) {
-			m.show();
+			result += m.toString() + '\n';
 		}
 
 		MyLogger.write("displayAll");
+
+		return result;
 	}
 
-	public void displayAllSortedByName() {
+	public String displayAllSortedByName() {
+		String result = "";
 		List<Marketplace> listOfMarketplaces = marketplaceRepository.getListOfMarketplaces();
 		ArrayList<Marketplace> sortedList = new ArrayList<Marketplace>(listOfMarketplaces); 
 		sortedList.sort(Comparator.comparing(Marketplace::getName));
 		for (Marketplace m : sortedList) {
-			m.show();
+			result += m.toString() + '\n';
 		}
 
 		MyLogger.write("displayAllSortedByName");
+		return result;
 	}
 
-	public void displayAllSortedByNumberOfCustomers() {
+	public String displayAllSortedByNumberOfCustomers() {
+		String result = "";
 		List<Marketplace> listOfMarketplaces = marketplaceRepository.getListOfMarketplaces();
 		ArrayList<Marketplace> sortedList = new ArrayList<Marketplace>(listOfMarketplaces); 
 		sortedList.sort(Comparator.comparing(Marketplace::getNumberOfCustomers).reversed());
 		for (Marketplace m : sortedList) {
-			m.show();
+			result += m.toString() + '\n';
 		}
 
 		MyLogger.write("displayAllSortedByNumberOfCustomers");
+		return result;
 	}
-	
-	public void displayCustomersPerMarketplace() {
+
+	public String displayCustomers() {
+		String result = "";
 		List<Marketplace> listOfMarketplaces = marketplaceRepository.getListOfMarketplaces();
 		for (Marketplace m : listOfMarketplaces) {
-			System.out.println("------------------------------");
-			System.out.println("Nume: " + m.getName());
 			for (Customer customer : m.getCustomers()) {
-				System.out.println(customer.getName());
+				result += customer.getName() + '\n';
+			}
+		}
+
+		MyLogger.write("displayCustomers");
+		return result;
+	}
+	
+	public String displayCustomersPerMarketplace() {
+		String result = "";
+		List<Marketplace> listOfMarketplaces = marketplaceRepository.getListOfMarketplaces();
+		for (Marketplace m : listOfMarketplaces) {
+			result += "------------------------------" + '\n';
+			result += "Nume: " + m.getName() + '\n';
+			for (Customer customer : m.getCustomers()) {
+				result += customer.getName() + '\n';
 			}
 		}
 
 		MyLogger.write("displayCustomersPerMarketplace");
+		return result;
 	}
 
 	public List<String> toCSV() {

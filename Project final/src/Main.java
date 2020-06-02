@@ -1,3 +1,4 @@
+import gui.FirstFrame;
 import models.Customer;
 import models.Marketplace;
 import models.OrderStatus;
@@ -46,9 +47,12 @@ public class Main {
 		// se poate face si pentru marketplace, product, etc
 		writer.write("output_customer.csv", customerService.toCSV());
 
+		new FirstFrame(marketplaceService);
+
 		marketplaceService.displayAll();
 		marketplaceService.displayAllSortedByName();
 		marketplaceService.displayAllSortedByNumberOfCustomers();
+		marketplaceService.displayCustomers();
 		marketplaceService.displayCustomersPerMarketplace();
 	}
 
