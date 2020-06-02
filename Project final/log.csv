@@ -61,3 +61,15 @@ displayCustomers, 2020-06-02T19:27:11.270835300
 displayCustomersPerMarketplace, 2020-06-02T19:27:12.386328700
 displayAll, 2020-06-02T19:27:13.595593700
 displayCustomers, 2020-06-02T19:27:14.716181200
+displayAll, 2020-06-02T19:31:09.413290900, main
+displayAllSortedByName, 2020-06-02T19:31:09.429247300, main
+displayAllSortedByNumberOfCustomers, 2020-06-02T19:31:09.430245100, main
+displayCustomers, 2020-06-02T19:31:09.430245100, main
+displayCustomersPerMarketplace, 2020-06-02T19:31:09.431242900, main
+displayAllSortedByName, 2020-06-02T19:31:11.087586500, AWT-EventQueue-0
+displayAll, 2020-06-02T19:31:12.965949900, AWT-EventQueue-0
+displayCustomers, 2020-06-02T19:31:14.016278300, AWT-EventQueue-0
+displayCustomersPerMarketplace, 2020-06-02T19:31:14.881625200, AWT-EventQueue-0
+displayAllSortedByNumberOfCustomers, 2020-06-02T19:31:15.933972900, AWT-EventQueue-0
+displayAll, 2020-06-02T19:31:16.831486500, AWT-EventQueue-0
+displayAllSortedByNumberOfCustomers, 2020-06-02T19:31:51.315901600, AWT-EventQueue-0

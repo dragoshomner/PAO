@@ -28,7 +28,7 @@ public class MyLogger {
             file.createNewFile();
             outputStream = new FileOutputStream(file, true);
 
-            String output = method + ", " + LocalDateTime.now() + "\n";
+            String output = method + ", " + LocalDateTime.now() + ", " + Thread.currentThread().getName() + "\n";
             byte[] contentInBytes = output.getBytes();
             outputStream.write(contentInBytes);
 

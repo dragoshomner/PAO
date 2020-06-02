@@ -48,12 +48,6 @@ public class Main {
 		writer.write("output_customer.csv", customerService.toCSV());
 
 		new FirstFrame(marketplaceService);
-
-		marketplaceService.displayAll();
-		marketplaceService.displayAllSortedByName();
-		marketplaceService.displayAllSortedByNumberOfCustomers();
-		marketplaceService.displayCustomers();
-		marketplaceService.displayCustomersPerMarketplace();
 	}
 
 }
